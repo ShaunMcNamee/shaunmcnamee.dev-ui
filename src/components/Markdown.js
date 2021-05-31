@@ -5,7 +5,6 @@ import {
   Code,
   Divider,
   Link,
-  Checkbox,
   ListItem,
   Heading,
   Image,
@@ -13,132 +12,59 @@ import {
   UnorderedList,
 } from '@chakra-ui/react'
 
+const headingSizes = {
+  h1: '2xl',
+  h2: 'xl',
+  h3: 'lg',
+  h4: 'md',
+  h5: 'sm',
+  h6: 'xs',
+}
+
+const getHeading = (as, props) => (
+  <Heading paddingBottom={8} as={as} size={headingSizes[as]} {...props} />
+)
+
 export const defaults = {
-  p: props => {
-    const { children } = props;
-    return <Text mb={2}>{children}</Text>;
-  },
-  em: props => {
-    const { children } = props;
-    return <Text as="em">{children}</Text>;
-  },
-  blockquote: props => {
-    const { children } = props;
-    return <Code p={2}>{children}</Code>;
-  },
-  code: props => {
-    const { language, value } = props;
-    const className = language && `language-${language}`;
-    return (
-      <pre {...getCoreProps(props)}>
-        <Code p={2} className={className || null}>
-          {value}
-        </Code>
-      </pre>
-    );
-  },
+  p: ({ children }) => <Text paddingBottom={8}>{children}</Text>,
+  em: ({ children }) => <Text as="em">{children}</Text>,
+  blockquote: ({ children }) => <Code p={2}>{children}</Code>,
+  code: () => null,
   hr: Divider,
   a: Link,
   img: Image,
-  text: props => {
-    const { children } = props;
-    return <Text as="span">{children}</Text>;
-  },
-  list: props => {
-    const { start, ordered, children, depth } = props;
-    const attrs = getCoreProps(props);
-    if (start !== null && start !== 1 && start !== undefined) {
-      attrs.start = start.toString();
-    }
-    let Element = UnorderedList;
-    let styleType = 'disc';
-    if (ordered) {
-      Element = OrderedList;
-      styleType = 'decimal';
-    }
-    if (depth === 1) styleType = 'circle';
-    return (
-      <Element
-        spacing={2}
-        as={ordered ? 'ol' : 'ul'}
-        styleType={styleType}
-        pl={4}
-        {...attrs}
-      >
-        {children}
-      </Element>
-    );
-  },
-  listItem: props => {
-    const { children, checked } = props;
-    let checkbox = null;
-    if (checked !== null && checked !== undefined) {
-      checkbox = (
-        <Checkbox isChecked={checked} isReadOnly>
-          {children}
-        </Checkbox>
-      );
-    }
-    return (
-      <ListItem
-        {...getCoreProps(props)}
-        listStyleType={checked !== null ? 'none' : 'inherit'}
-      >
-        {checkbox || children}
-      </ListItem>
-    );
-  },
+  text: ({ children }) => <Text as="span">{children}</Text>,
+  ol: ({ children }) => (
+    <OrderedList
+      color="brand.mintCream"
+      spacing={2}
+      paddingBottom={8}
+      paddingLeft={4}
+    >
+      {children}
+    </OrderedList>
+  ),
+  ul: ({ children }) => (
+    <UnorderedList
+      color="brand.mintCream"
+      spacing={2}
+      paddingBottom={8}
+      paddingLeft={4}
+    >
+      {children}
+    </UnorderedList>
+  ),
+  li: ({ children }) => <ListItem>{children}</ListItem>,
   definition: () => null,
-  h1: props => {
-    const sizes = ['2xl', 'xl', 'lg', 'md', 'sm', 'xs'];
-    return (
-      <Heading
-        my={4}
-        as={'h1'}
-        size={'2xl'}
-        {...props}
-      />
-    );
-  },
-  h2: props => {
-    const sizes = ['2xl', 'xl', 'lg', 'md', 'sm', 'xs'];
-    return (
-      <Heading
-        my={4}
-        as={'h2'}
-        size={'xl'}
-        {...props}
-      />
-    );
-  },
-  h3: props => {
-    const sizes = ['2xl', 'xl', 'lg', 'md', 'sm', 'xs'];
-    return (
-      <Heading
-        my={4}
-        as={'h3'}
-        size={'lg'}
-        {...props}
-      />
-    );
-  },
-  h4: props => {
-    const sizes = ['2xl', 'xl', 'lg', 'md', 'sm', 'xs'];
-    return (
-      <Heading
-        my={4}
-        as={'h4'}
-        size={'md'}
-        {...props}
-      />
-    );
-  },
-  inlineCode: props => {
-    const { children } = props;
-    return <Code {...getCoreProps(props)}>{children}</Code>;
-  },
+  h1: (props) => getHeading('h1', props),
+  h2: (props) => getHeading('h2', props),
+  h3: (props) => getHeading('h3', props),
+  h4: (props) => getHeading('h4', props),
+  h5: (props) => getHeading('h5', props),
+  h6: (props) => getHeading('h6', props),
+  inlineCode: () => null,
 }
 
-export const Markdown = ({children}) => (
+export const Markdown = ({ children }) => (
   <ReactMarkdown components={defaults}>{children}</ReactMarkdown>
 )
