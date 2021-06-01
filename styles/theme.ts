@@ -42,6 +42,23 @@ const theme = extendTheme({
         },
       },
     },
+    Container: {
+      variants: {
+        blogPost: {
+          margin: '12px',
+          padding: '6',
+          maxWidth: '250px',
+          cursor: 'pointer',
+          borderColor: 'brand.onyx',
+          borderWidth: '1px',
+          _hover: {
+            borderColor: 'brand.mintCream',
+            borderWidth: '1px',
+            borderRadius: 'lg',
+          },
+        },
+      },
+    },
   },
 })
 

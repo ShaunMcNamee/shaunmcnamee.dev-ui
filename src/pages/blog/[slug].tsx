@@ -1,9 +1,10 @@
 import { ApolloClient, gql, InMemoryCache } from '@apollo/client'
-import { Heading, Link as ChakraLink, Box } from '@chakra-ui/react'
+import { Heading, Link as ChakraLink, Box, Text } from '@chakra-ui/react'
 import React from 'react'
 import { Markdown } from '../../components/Markdown'
 import { Main } from '../../components/Main'
 import Link from 'next/link'
+import { format } from 'date-fns'
 
 const client = new ApolloClient({
   uri: process.env.CMS_URL,
@@ -16,6 +17,9 @@ export default function Post({ post }) {
       <Heading paddingBottom={8} as={'h1'} size={'2xl'}>
         {post.title}
       </Heading>
+      <Text paddingBottom={4} fontSize="xs">
+        {format(new Date(post.published_at), 'MMM dd, yyyy')}
+      </Text>
       <Markdown>{post.post}</Markdown>
       <Box display="flex" justifyContent="center">
         <Link href="/blog">
@@ -57,6 +61,7 @@ export async function getStaticProps({ params }) {
           slug
           title
           post
+          published_at
         }
       }
     `

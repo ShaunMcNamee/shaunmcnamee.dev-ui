@@ -1,21 +1,18 @@
 import Link from 'next/link'
-import { Text, Box, Heading } from '@chakra-ui/react'
+import { Text, Container, Heading } from '@chakra-ui/react'
 import React from 'react'
+import { format } from 'date-fns'
 
-export const BlogPostCard = ({ slug, title, description }) => {
+export const BlogPostCard = ({ slug, title, description, publishedAt }) => {
   return (
     <Link href={`/blog/${slug}`}>
-      <Box
-        padding={8}
-        borderColor="brand.mintCream"
-        borderWidth={1}
-        borderRadius="lg"
-        maxWidth="300px"
-        cursor="pointer"
-      >
+      <Container variant="blogPost">
         <Heading paddingBottom={8}>{title}</Heading>
+        <Text paddingBottom={4} fontSize="xs">
+          {format(new Date(publishedAt), 'MMM dd, yyyy')}
+        </Text>
         <Text>{description}</Text>
-      </Box>
+      </Container>
     </Link>
   )
 }
