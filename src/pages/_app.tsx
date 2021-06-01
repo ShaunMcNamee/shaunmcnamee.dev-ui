@@ -18,9 +18,11 @@ function MyApp({ Component, pageProps }) {
         <meta name="og:title" content={title} />
         <meta name="og:description" content={description} />
         <meta name="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@shaunpmcnamee" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
+        <link rel="prefetch" href="/me.jpg" />
       </Head>
       <Stack dir="column" height="100vh" width="100vw">
         <Header />
