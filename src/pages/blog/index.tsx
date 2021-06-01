@@ -15,7 +15,7 @@ export default function Blog({ posts }) {
             title={post.title}
             description={post.description}
             publishedAt={post.published_at}
-          ></BlogPostCard>
+          />
         ))}
       </Flex>
     </Main>
