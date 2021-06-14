@@ -22,7 +22,8 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:creator" content="@shaunpmcnamee" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <link rel="prefetch" href="/me.jpg" />
+        <meta name="twitter:image" content={`https://www.shaunmcnamee.dev/me.jpg`} />
+        {/*<link rel="prefetch" href="/me.jpg" />*/}
       </Head>
       <Stack dir="column" height="100vh" width="100vw">
         <Header />
