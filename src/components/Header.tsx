@@ -1,8 +1,18 @@
 import React from 'react'
-import { Box, Heading, Link as ChakraLink, Stack } from '@chakra-ui/react'
+import {
+  Box,
+  Heading,
+  Link as ChakraLink,
+  Stack,
+  useColorMode,
+  Button,
+} from '@chakra-ui/react'
+import DarkModeToggle from 'react-dark-mode-toggle'
 import Link from 'next/link'
 
 export const Header = () => {
+  const { colorMode, toggleColorMode } = useColorMode()
+  console.log(colorMode)
   return (
     <Box as="header" backgroundColor="brand.blueJeans">
       <Box m="0 auto" maxW="1200" px="6" py="5">
@@ -31,6 +41,16 @@ export const Header = () => {
             <Link href="/about" passHref>
               <ChakraLink variant="header">About</ChakraLink>
             </Link>
+            <Button onClick={toggleColorMode}>
+              Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+            </Button>
+            {/*<Switch size="md" onChange={toggleColorMode} />*/}
+            {/*<DarkModeToggle*/}
+            {/*  size={60}*/}
+            {/*  speed={2}*/}
+            {/*  checked={colorMode === 'dark'}*/}
+            {/*  onChange={toggleColorMode}*/}
+            {/*/>*/}
           </Stack>
         </Stack>
       </Box>
