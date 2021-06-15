@@ -40,6 +40,9 @@ const theme = extendTheme({
             textDecoration: 'none',
           },
         },
+        content: {
+          textDecoration: 'underline',
+        },
       },
     },
     Container: {

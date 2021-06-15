@@ -31,7 +31,11 @@ export const defaults = {
   blockquote: ({ children }) => <Code p={2}>{children}</Code>,
   code: () => null,
   hr: Divider,
-  a: Link,
+  a: ({ href, children }) => (
+    <Link variant="content" href={href}>
+      {children}
+    </Link>
+  ),
   img: Image,
   text: ({ children }) => <Text as="span">{children}</Text>,
   ol: ({ children }) => (
