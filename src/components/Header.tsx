@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Heading, Link as ChakraLink, Stack } from '@chakra-ui/react'
 import Link from 'next/link'
+import { title } from '../../content/meta'
 
 export const Header = () => {
   return (
@@ -12,7 +13,7 @@ export const Header = () => {
           flexDirection={['column', 'row']}
         >
           <Heading as="h1" m="0" color="brand.onyx">
-            Shaun 2.0
+            {title}
           </Heading>
           <Stack
             align="center"
