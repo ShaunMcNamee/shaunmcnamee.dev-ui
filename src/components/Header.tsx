@@ -19,18 +19,22 @@ export const Header = () => {
             flexDirection={['column', 'row']}
             margin="0 !important"
           >
-            <Link href="/" passHref>
-              <ChakraLink variant="header">Home</ChakraLink>
-            </Link>
-            <Link href="/blog" passHref>
-              <ChakraLink variant="header">Blog</ChakraLink>
-            </Link>
-            <Link href="/resume" passHref>
-              <ChakraLink variant="header">Resume</ChakraLink>
-            </Link>
-            <Link href="/about" passHref>
-              <ChakraLink variant="header">About</ChakraLink>
-            </Link>
+            <Stack flexDirection="row">
+              <Link href="/" passHref>
+                <ChakraLink variant="header">Home</ChakraLink>
+              </Link>
+              <Link href="/blog" passHref>
+                <ChakraLink variant="header">Blog</ChakraLink>
+              </Link>
+            </Stack>
+            <Stack flexDirection="row" margin="0 !important">
+              <Link href="/resume" passHref>
+                <ChakraLink variant="header">Resume</ChakraLink>
+              </Link>
+              <Link href="/about" passHref>
+                <ChakraLink variant="header">About</ChakraLink>
+              </Link>
+            </Stack>
           </Stack>
         </Stack>
       </Box>

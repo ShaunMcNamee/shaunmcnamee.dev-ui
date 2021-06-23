@@ -13,11 +13,7 @@ export const Footer = () => (
         <Heading as="h4" size="md" color="brand.onyx">
           {`Shaun McNamee \u00A9 ${new Date().getFullYear()}`}
         </Heading>
-        <Stack
-          align="center"
-          flexDirection={['column', 'row']}
-          margin="0 !important"
-        >
+        <Stack align="center" flexDirection="row" margin="0 !important">
           <Link href="https://twitter.com/shaunpmcnamee" passHref>
             <ChakraLink variant="header">Twitter</ChakraLink>
           </Link>
