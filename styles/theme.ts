@@ -34,6 +34,19 @@ const theme = extendTheme({
             outline: '1px solid #F7FFF6',
           },
         },
+        hamburgerMenu: {
+          color: 'brand.onyx',
+          margin: '0 !important',
+          fontSize: '24px',
+          fontWeight: '600',
+          padding: '16px 0px',
+          _hover: {
+            textDecoration: 'none',
+          },
+          _focus: {
+            outline: '1px solid #F7FFF6',
+          },
+        },
         body: {
           color: 'brand.mintCream',
           _hover: {
