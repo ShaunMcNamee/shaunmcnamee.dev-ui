@@ -63,7 +63,7 @@ const theme = extendTheme({
         blogPost: {
           margin: '12px',
           padding: '6',
-          maxWidth: '250px',
+          maxWidth: '275px',
           cursor: 'pointer',
           borderColor: 'brand.onyx',
           borderWidth: '1px',
