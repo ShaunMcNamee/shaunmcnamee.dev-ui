@@ -8,9 +8,9 @@ export const BlogPostCard = ({ slug, title, description, publishedAt }) => {
     <Link href={`/blog/${slug}`}>
       <Container variant="blogPost">
         <Heading paddingBottom={8}>{title}</Heading>
-        <Text paddingBottom={4} fontSize="xs">
-          {format(new Date(publishedAt), 'MMM dd, yyyy')}
-        </Text>
+        {/*<Text paddingBottom={4} fontSize="xs">*/}
+        {/*  {format(new Date(publishedAt), 'MMM dd, yyyy')}*/}
+        {/*</Text>*/}
         <Text>{description}</Text>
       </Container>
     </Link>

@@ -17,9 +17,9 @@ export default function Post({ post }) {
       <Heading paddingBottom={8} as={'h1'} size={'2xl'}>
         {post.title}
       </Heading>
-      <Text paddingBottom={4} fontSize="xs">
-        {format(new Date(post.published_at), 'MMM dd, yyyy')}
-      </Text>
+      {/*<Text paddingBottom={4} fontSize="xs">*/}
+      {/*  {format(new Date(post.published_at), 'MMM dd, yyyy')}*/}
+      {/*</Text>*/}
       <Markdown>{post.post}</Markdown>
       <Box display="flex" justifyContent="center">
         <Link href="/blog">
