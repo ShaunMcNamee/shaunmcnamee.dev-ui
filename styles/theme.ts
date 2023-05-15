@@ -74,9 +74,9 @@ const theme = extendTheme({
     Container: {
       variants: {
         blogPost: {
-          margin: '12px',
-          padding: '6',
-          maxWidth: '260px',
+          margin: '10px',
+          padding: '5',
+          maxWidth: '265px',
           cursor: 'pointer',
           borderColor: 'brand.mintCream',
           color: 'brand.mintCream',
