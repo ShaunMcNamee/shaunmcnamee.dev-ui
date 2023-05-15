@@ -7,11 +7,11 @@ export const BlogPostCard = ({ slug, title, description, publishedAt }) => {
   return (
     <Link href={`/blog/${slug}`}>
       <Container variant="blogPost">
-        <Heading paddingBottom={8}>{title}</Heading>
+        <Heading paddingBottom={8} variant="inherit">{title}</Heading>
         {/*<Text paddingBottom={4} fontSize="xs">*/}
         {/*  {format(new Date(publishedAt), 'MMM dd, yyyy')}*/}
         {/*</Text>*/}
-        <Text>{description}</Text>
+        <Text variant="inherit">{description}</Text>
       </Container>
     </Link>
   )

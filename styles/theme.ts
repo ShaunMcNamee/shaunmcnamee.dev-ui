@@ -6,19 +6,31 @@ const theme = extendTheme({
       blueJeans: '#61A7E1',
       onyx: '#393E41',
       mintCream: '#F7FFF6',
-      mayGreen: '#2E933C',
+      viridian: '#558B6E',
+      xanthous: '#EDB230',
     },
   },
   components: {
     Text: {
       baseStyle: {
         color: 'brand.mintCream',
+        fontSize: '16px',
       },
+      variants: {
+        inherit: {
+          color: 'inherit',
+        },
+      }
     },
     Heading: {
       baseStyle: {
         color: 'brand.mintCream',
       },
+      variants: {
+        inherit: {
+          color: 'inherit',
+        },
+      }
     },
     Link: {
       variants: {
@@ -51,6 +63,7 @@ const theme = extendTheme({
           color: 'brand.mintCream',
           _hover: {
             textDecoration: 'none',
+            color: 'brand.xanthous',
           },
         },
         content: {
@@ -65,10 +78,13 @@ const theme = extendTheme({
           padding: '6',
           maxWidth: '275px',
           cursor: 'pointer',
-          borderColor: 'brand.onyx',
+          borderColor: 'brand.mintCream',
+          color: 'brand.mintCream',
           borderWidth: '1px',
+          borderRadius: 'lg',
           _hover: {
-            borderColor: 'brand.mintCream',
+            borderColor: 'brand.xanthous',
+            color: 'brand.xanthous',
             borderWidth: '1px',
             borderRadius: 'lg',
           },

@@ -13,7 +13,7 @@ export const Job = ({ company, title, startDate, endDate, content }) => {
   const dateString = `${startDateString} - ${endDateString}`
 
   return (
-    <Container maxWidth="1440px" paddingBottom={6}>
+    <Container maxWidth="1440px" paddingBottom={6} px={0}>
       <Heading as="h3" paddingBottom={4}>
         {heading}
       </Heading>

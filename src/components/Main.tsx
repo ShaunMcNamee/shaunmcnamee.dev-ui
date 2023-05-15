@@ -9,7 +9,7 @@ export const Main: React.FC = ({ children }) => (
     flex="1"
     overflow="scroll"
   >
-    <Box m="0 auto" maxW="1200" py="16">
+    <Box m="0 auto" maxW="1200" py="16" px="6">
       {children}
     </Box>
   </Box>
