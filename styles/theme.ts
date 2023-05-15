@@ -76,7 +76,7 @@ const theme = extendTheme({
         blogPost: {
           margin: '12px',
           padding: '6',
-          maxWidth: '275px',
+          maxWidth: '260px',
           cursor: 'pointer',
           borderColor: 'brand.mintCream',
           color: 'brand.mintCream',
