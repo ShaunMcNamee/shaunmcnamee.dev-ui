@@ -1,5 +1,7 @@
-import { Box, Heading, Link as ChakraLink, Stack } from '@chakra-ui/react'
-import Link from 'next/link'
+'use client'
+
+import { Box, Heading, Stack } from '@chakra-ui/react'
+import { Link } from '@chakra-ui/next-js'
 import React from 'react'
 
 export const Footer = () => (
@@ -14,11 +16,11 @@ export const Footer = () => (
           {`Shaun McNamee \u00A9 ${new Date().getFullYear()}`}
         </Heading>
         <Stack align="center" flexDirection="row" margin="0 !important">
-          <Link href="https://twitter.com/shaunpmcnamee" passHref>
-            <ChakraLink variant="header">Twitter</ChakraLink>
+          <Link href="https://twitter.com/shaunpmcnamee" variant="header">
+            Twitter
           </Link>
-          <Link href="https://github.com/shaunmcnamee/" passHref>
-            <ChakraLink variant="header">GitHub</ChakraLink>
+          <Link href="https://github.com/shaunmcnamee/" variant="header">
+            GitHub
           </Link>
         </Stack>
       </Stack>

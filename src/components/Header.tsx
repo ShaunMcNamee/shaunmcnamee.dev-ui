@@ -1,8 +1,9 @@
+'use client'
+
 import React from 'react'
 import {
   Box,
   Heading,
-  Link as ChakraLink,
   Stack,
   useBreakpointValue,
   IconButton,
@@ -13,7 +14,7 @@ import {
   ModalCloseButton,
 } from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
-import Link from 'next/link'
+import { Link } from '@chakra-ui/next-js'
 import { title } from '../../content/meta'
 
 export const Header = () => {
@@ -30,17 +31,17 @@ export const Header = () => {
               {title}
             </Heading>
             <Stack align="center" flexDirection="row" margin="0 !important">
-              <Link href="/" passHref>
-                <ChakraLink variant="header">Home</ChakraLink>
+              <Link href="/" variant="header">
+                Home
               </Link>
-              <Link href="/blog" passHref>
-                <ChakraLink variant="header">Blog</ChakraLink>
+              <Link href="/blog" variant="header">
+                Blog
               </Link>
-              <Link href="/resume" passHref>
-                <ChakraLink variant="header">Resume</ChakraLink>
+              <Link href="/resume" variant="header">
+                Resume
               </Link>
-              <Link href="/about" passHref>
-                <ChakraLink variant="header">About</ChakraLink>
+              <Link href="/about" variant="header">
+                About
               </Link>
             </Stack>
           </Stack>
@@ -74,25 +75,21 @@ export const Header = () => {
                     margin="0 !important"
                     justify="space-around"
                   >
-                    <Link href="/" passHref>
-                      <ChakraLink variant="hamburgerMenu" onClick={close}>
-                        Home
-                      </ChakraLink>
+                    <Link href="/" variant="hamburgerMenu" onClick={close}>
+                      Home
                     </Link>
-                    <Link href="/blog" passHref>
-                      <ChakraLink variant="hamburgerMenu" onClick={close}>
-                        Blog
-                      </ChakraLink>
+                    <Link href="/blog" variant="hamburgerMenu" onClick={close}>
+                      Blog
                     </Link>
-                    <Link href="/resume" passHref>
-                      <ChakraLink variant="hamburgerMenu" onClick={close}>
-                        Resume
-                      </ChakraLink>
+                    <Link
+                      href="/resume"
+                      variant="hamburgerMenu"
+                      onClick={close}
+                    >
+                      Resume
                     </Link>
-                    <Link href="/about" passHref>
-                      <ChakraLink variant="hamburgerMenu" onClick={close}>
-                        About
-                      </ChakraLink>
+                    <Link href="/about" variant="hamburgerMenu" onClick={close}>
+                      About
                     </Link>
                   </Stack>
                 </ModalBody>

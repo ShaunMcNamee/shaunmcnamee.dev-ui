@@ -1,9 +1,25 @@
+'use client'
+
 import { Text, Container, Heading } from '@chakra-ui/react'
 import React from 'react'
 import { format } from 'date-fns'
 import { Markdown } from './Markdown'
 
-export const Job = ({ company, title, startDate, endDate, content }) => {
+export type JobType = {
+  company: string
+  title: string
+  startDate: string
+  endDate?: string
+  content: string
+}
+
+export const Job: React.FC<JobType> = ({
+  company,
+  title,
+  startDate,
+  endDate,
+  content,
+}) => {
   const heading = `${title} - ${company}`
   const startDateString = format(new Date(startDate), 'MMM yyyy')
   const endDateString =
